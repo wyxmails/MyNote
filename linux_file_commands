@@ -1,0 +1,3 @@
+suffix .tar.gz
+  compression command: tar  -zcvf   des_file_name.tar.gz  src_file_name
+  decompression command: tar  -zxvf   src_file_name.tar.gz
