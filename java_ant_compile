@@ -1,0 +1,56 @@
+Use ant to compile Java
+
+Firstly download ant:
+  http://mirror.bit.edu.cn/apache//ant/binaries/apache-ant-1.9.4-bin.tar.gz
+  (I downloaded apache-ant-1.9.4-bin.tar.gz and install on CentOS release 5.8 (Final))
+  
+Decompression the package and move the decompressed directory to /usr/local/:
+  tar -zxvf apache-ant-1.8.1-bin.tar.gz
+Add the following code to /etc/profile :
+  export ANT_HOME=/usr/local/apache-ant-1.9.4
+  export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH    
+
+Check the install result:
+  ant -version
+  
+Example of use ant to compile Java code:
+
+1, mkdir antsample
+2, mkdir antsample/src
+3, mkdir antsample/src/sample
+4, vim antsample/src/sample/HelloWorld.java, following is the content
+  package sample;                                                                                                                                              
+
+  import java.io.*;
+  import java.util.*;
+
+  public class HelloWorld{
+    public static void main(String[]args){
+        System.out.println("Hello World!");
+    }   
+  }
+5, vim antsample/build.xml, following is content
+  <project name="HelloWorld" default="compile" basedir=".">
+  <target name="clean">
+  <delete dir="build"/>
+  </target>
+  <target name="compile">
+  <mkdir dir="build/classes"/>
+  <javac srcdir="src" destdir="build/classes"/>
+  </target>
+  <target name="jar">
+  <mkdir dir="build/jar"/>
+  <jar destfile="build/jar/HelloWorld.jar" basedir="build/classes">
+  <manifest>
+  <attribute name="Main-Class" value="sample.HelloWorld"/>
+  </manifest>
+  </jar>
+  </target>
+  <target name="run">
+  <java jar="build/jar/HelloWorld.jar" fork="true"/>
+  </target>
+  </project>
+6, cd antsample
+7, ant compile  //because there is <target name="compile"> in build.xml
+8, ant jar    //because there is <target name="jar"> in build.xml, if you did not write this block, then don't execute this command
+9, ant run   //Ditto
