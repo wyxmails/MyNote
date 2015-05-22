@@ -1,0 +1,3 @@
+See detail of jar file:  jar vtf  fileName.jar
+Generate executable jar file: jar cvfm des.jar src_dir
+Execute jar file with Java: java -jar filename.jar
