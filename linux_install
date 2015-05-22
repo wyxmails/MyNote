@@ -1,0 +1,17 @@
+## Java install
+  Download address:
+    http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+    (I downloaded jdk-8u45-linux-x64.rpm and install it on CentOS release 5.8 (Final))
+  Use rpm command to install:
+    rpm -ivh jdk-8u45-linux-x64.rpm
+  Add the following code to /etc/profile:
+    export JAVA_HOME=/usr/java/jdk1.8.0_45
+    export PATH=$JAVA_HOME/bin:$PATH
+    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+  Execute the following command to make it effectiv:
+    source /etc/profile
+##Java install ended
+
+## Git install
+  sudo yum install git --nogpgcheck
+## Git install ended
