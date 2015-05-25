@@ -1,0 +1,43 @@
+ctags
+  download: http://ctags.sourceforge.net
+  install:
+    tar -xzvf ctags-x.x.tar.gz
+    cd ctags-x.x
+    ./configure
+    make
+    make install
+  use:
+    go to the souce code directory
+    ctags -R //tags will be generated
+    vim
+    :e .
+    :set tags=./tags
+    Ctrl+],Ctrl+o/t
+    
+taglist
+  download: http://www.vim.org/scripts/script.php?script_id=273
+  install:
+    mkdir ~/.vim
+    cp taglist_xx.zip ~/.vim
+    cd ~/.vim
+    unzip taglist_xx.zip
+    //add the following two lines to ~/.vimrc
+    let Tlist_Show_One_File=1
+    let Tlist_Exit_OnlyWindow=1
+  
+WinManager
+  download: http://www.vim.org/scripts/script.php?script_id=95
+  install:
+    mkdir ~/.vim
+    cp winmanager.zip ~/.vim
+    cd ~/.vim
+    unzip winmanager.zip
+    //add the following two lines to ~/.vimrc
+    let g:winManagerWindowLayout='FileExplorer|TagList'
+    nmap wm :WMToggle<cr>
+  use:
+    when openning a file with vim, enter wm on normal stat.
+    
+With the above three plugins, you can have a simple IDE, 
+jump between files, find defination of function, 
+see directories and tags.
