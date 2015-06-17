@@ -1,4 +1,5 @@
-###a simple sample
+###a simple sample, save the following code in sample.plot, 
+##execute 'gnuplot sample.plot' in Unix/Linux command line
 ##the output graph file format
 set term jpeg   
 ## if the above line is set term eps, then the file can be xxx.eps
