@@ -1,0 +1,8 @@
+I am learning java recently, reading Java tutorial, and code some example. I found a very interesting phenominan:
+        System.out.println("Math.rint(100.500): "+Math.rint(100.500));  ==> Math.rint(100.500): 100.0
+        System.out.println("Math.rint(101.500): "+Math.rint(101.500));  ==> Math.rint(101.500): 102.0
+        System.out.println("Math.rint(99.500): "+Math.rint(99.500));    ==> Math.rint(99.500): 100.0
+        System.out.println("Math.rint(10.500): "+Math.rint(10.500));    ==> Math.rint(10.500): 10.0
+  In the above examples, rint(double d) is a function that will return the integer that is closest in value to the argument.
+  But why the results are different between two groups (10.500,100.500) and (99.500,101.500)? 
+  Is it because the integer part of the first group can be modified by 10? No result until now.
