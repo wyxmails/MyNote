@@ -1,0 +1,13 @@
+sources:
+  highCharts homepage: http://www.hcharts.cn/index.php
+  highCharts api: http://www.hcharts.cn/api/index.php#
+  ExtJs guide: http://docs.sencha.com/extjs/6.0/
+  ExtJs api: http://docs.sencha.com/extjs/6.0/6.0.0-classic/
+  
+problems:
+  How to initialize Object through json(made by server side)? 
+  Assemble JsonObject with java on server side and then return, use Ext to decode the json data,
+  get the data by its key, the highchart can process the series data and represent in line/pie/area/column/3d/scatter and so on.
+  But some of the value I can not get.
+  I add key x and its value in server side, but can not get the value in tooltip with this.x, but can get this.y,
+  do not know what is the reason.
