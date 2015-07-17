@@ -1,14 +1,14 @@
 I am learning java recently, reading Java tutorial, and code some example. I found a very interesting phenominan:
-        System.out.println("Math.rint(100.500): "+Math.rint(100.500));  ==> Math.rint(100.500): 100.0
-        System.out.println("Math.rint(101.500): "+Math.rint(101.500));  ==> Math.rint(101.500): 102.0
-        System.out.println("Math.rint(99.500): "+Math.rint(99.500));    ==> Math.rint(99.500): 100.0
-        System.out.println("Math.rint(10.500): "+Math.rint(10.500));    ==> Math.rint(10.500): 10.0
+    System.out.println("Math.rint(100.500): "+Math.rint(100.500));  ==> Math.rint(100.500): 100.0
+    System.out.println("Math.rint(101.500): "+Math.rint(101.500));  ==> Math.rint(101.500): 102.0
+    System.out.println("Math.rint(99.500): "+Math.rint(99.500));    ==> Math.rint(99.500): 100.0
+    System.out.println("Math.rint(10.500): "+Math.rint(10.500));    ==> Math.rint(10.500): 10.0
   In the above examples, rint(double d) is a function that will return the integer that is closest in value to the argument.
   But why the results are different between two groups (10.500,100.500) and (99.500,101.500)? 
   Is it because the integer part of the first group can be modified by 10? No result until now.
 
 
-//following is lambda expression examples
+////following is lambda expression examples
 import java.util.*;                                                                                                                                          
 import java.io.*;
 
@@ -31,10 +31,10 @@ public class Lambda{
     //anonymous inner class
     interface Fun{double fun(double x);}
     double d = Integral(new Fun(){
-            public double fun(double x){
-                return Math.sin(x);
-            }
-        },0,Math.PI,1e-5;
+        public double fun(double x){
+            return Math.sin(x);
+        }
+    },0,Math.PI,1e-5;
     //lambda expression
     double d1 = Integral(x->Math.sin(x)),0,Math.PI,1e-5);
     //*/
@@ -73,4 +73,54 @@ public class Lambda{
     }
 }   
 
-//lambda expression examples end
+////lambda expression examples end
+
+
+////send email with java
+import java.util.*;
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.activation.*;
+
+public class SendEmail{
+    public static void main(String[] args){
+        String to = "XXX@XXX.com";
+        String from = "YYY@YYY.com";                                                                                                   
+        String host = "localhost";
+            
+        Properties properties = System.getProperties();
+        properties.setProperty("mail.smtp.host",host);
+
+        Session session = Session.getDefaultInstance(properties);
+
+        try{
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
+            message.setSubject("This is the Subject Line!");
+            message.setText("This is actual message");
+
+            Transport.send(message);
+            System.out.println("Sent message successfully...");
+        }catch (MessagingException mex){
+            mex.printStackTrace();
+        }
+    }
+}  
+
+//manifest.mf content
+Manifest-Version: 1.0 
+Main-Class: SendEmail
+Class-Path: ../lib/javax.mail.jar                                                                                                      
+Created-By: wyx 
+
+get two jar packages: jaf-1_1_1.zip and javax.mail.jar
+exec commands in linux under classes directory:
+javac -d . -cp ../lib/javax.mail.jar ../mail/SendEmail.java
+jar cvfm test.jar ../mail/manifest.mf .
+service sendmail start  //open smtp port
+telnet 127.0.0.1 25 //test localhost smtp port
+java -jar test.jar 
+service sendmail stop  //close smtp port
+////send email end
+
