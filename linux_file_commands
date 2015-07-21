@@ -1,3 +1,6 @@
 suffix .tar.gz
   compression command: tar  -zcvf   des_file_name.tar.gz  src_file_name
   decompression command: tar  -zxvf   src_file_name.tar.gz
+suffix .zip
+  compression command: zip -r des_file_name.zip ./*   //compress all the files of the current direction
+  decompression command: unzip src_file_name.zip
