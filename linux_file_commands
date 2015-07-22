@@ -4,3 +4,8 @@ suffix .tar.gz
 suffix .zip
   compression command: zip -r des_file_name.zip ./*   //compress all the files of the current direction
   decompression command: unzip src_file_name.zip
+md5 encryption:
+  for string: echo -n '123' | md5sum
+  for file : md5sum filename   
+  //output have two field, the first one is md5 value, the second one is filename, if for string it will be -
+  // -n means \n not included
