@@ -44,3 +44,13 @@ WinManager
 With the above three plugins, you can have a simple IDE, 
 jump between files, find defination of function, 
 see directories and tags.
+
+cscope -- from definition to used positions
+  download: http://cscope.sourceforge.net, I downloaded cscope-15.8b.tar.gz
+  install:
+    go to the direction you store the package
+    tar -zxvf cscope-15.8b.tar.gz
+    cd cscope-15.8b
+    ./configure
+    make
+    make install
