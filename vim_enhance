@@ -47,10 +47,16 @@ see directories and tags.
 
 cscope -- from definition to used positions
   download: http://cscope.sourceforge.net, I downloaded cscope-15.8b.tar.gz
-  install:
+  install:  //there is something wrong with install
     go to the direction you store the package
     tar -zxvf cscope-15.8b.tar.gz
     cd cscope-15.8b
     ./configure
     make
     make install
+  use:
+    cscope -Rbq
+    csfind g function //find definition of function()
+    csfind c function //find used positions for function()
+    
+    
