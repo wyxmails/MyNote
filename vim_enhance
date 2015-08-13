@@ -8,11 +8,14 @@ ctags
     make install
   use:
     go to the souce code directory
-    ctags -R //tags will be generated
+    1, ctags -R //tags will be generated
+    2, ctags --java-kinds=mcfil -R  //autocomplete enabled
     vim
     :e .
     :set tags=./tags
-    Ctrl+],Ctrl+o/t
+    Ctrl+]:find definition,Ctrl+o/t:go back to previous function
+    Ctrl+N/P:autocomplete,Ctrl+E:stop autocomplete,Ctrl+E:complete with current autocomplete
+    
     
 taglist
   download: http://www.vim.org/scripts/script.php?script_id=273
