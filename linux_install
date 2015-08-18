@@ -15,3 +15,15 @@
 ## Git install
   sudo yum install git --nogpgcheck
 ## Git install ended
+
+## Maven install
+  wget http://mirrors.hust.edu.cn/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
+  mkdir /opt/maven
+  chmod 755 /opt/maven
+  tar -zxvf apache-maven-3.3.3-bin.tar.gz
+  vim /etc/profile
+    add the following two lines:
+    export M2_HOME=/opt/maven/apache-maven-3.3.3
+    export PATH=$PATH:$M2_HOME/bin     
+  mvn -v
+## Maven install ended
