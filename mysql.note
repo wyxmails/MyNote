@@ -1,2 +1,4 @@
 1, To see when the table was created:
-  select CREATE_TIME from information_schema.tables where TABLE_NAME='table_name';
+    select CREATE_TIME from information_schema.tables where TABLE_NAME='table_name';
+2, To see the comment of the table's fields:
+    show full fields from tablename;
