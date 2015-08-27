@@ -9,3 +9,8 @@ md5 encryption:
   for file : md5sum filename   
   //output have two field, the first one is md5 value, the second one is filename, if for string it will be -
   // -n means \n not included
+dos2unix :
+  under windows, newline signal is '0d0a', but under linux/unix , newline signal is '0d',
+  some times we transfer a file from windows to linux/unix through ftp or some other ways,
+  there will be ^M at the end of each line in the file,
+  use dos2unix can remove thes ^Ms.
