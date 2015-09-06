@@ -10,3 +10,5 @@
     git status
   use this command to know whether you are on branch or master:
     git branch
+4, if you meet with the following error, you need to cd to the directory contains .git :
+    remote: fatal: This operation must be run in a work tree
