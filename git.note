@@ -1,0 +1,12 @@
+1, if you want to create a branch under linux:
+    git branch new_branch_name
+  then use the following command to switch to the branch:
+    git checkout new_branch_name
+2, if you want to push modifications to master, just use the following command:
+    git push
+  but if you push to a branch, you need to use this command:
+    git push origin new_branch_name
+3, use this command to know which branch you are on:
+    git status
+  use this command to know whether you are on branch or master:
+    git branch
