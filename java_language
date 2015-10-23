@@ -124,3 +124,16 @@ java -jar test.jar
 service sendmail stop  //close smtp port
 ////send email end
 
+
+////javac compile error
+
+if you meet the following errors:
+    error: unmappable character for encoding ASCII
+        * @Description: ?????????????????????
+or the following errors:
+    error: unmappable character for encoding gbk
+        * @Description: ???????????
+        
+you should use the following compile command:
+    javac -encoding utf8 ***.java
+////javac compile error end
