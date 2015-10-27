@@ -1,0 +1,14 @@
+$ vim /etc/profile
+
+add the following line:
+export PS1='[\u@\H \W]\$'
+
+$ source /etc/profile
+
+comments:
+\u : current user
+\h : short name of current machine
+\H : full name of current machine
+\W : only show current directory's name
+\w : show full directories
+\$ : show # if current user is root, else show $
