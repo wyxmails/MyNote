@@ -11,3 +11,11 @@
         field4   int(11),
         primary key (id)
     );
+4, export data from database1 on your_ip1 server and import to database2 on ip2 server
+    execute the following command on ip2 server:
+    mysqldump --default-character-set=utf8 -uyour_username -pyour_password -hyour_ip1 database1 $tablename | mysql database2
+5, load data from mysql database to local file
+    for example, you want to get all the tables in a database, 
+    you can execute the following command on any server:
+    mysql --default-character-set=utf8 -uyour_username -pyour_password -hyour_ip database -e "show tables" > local_filename
+    
