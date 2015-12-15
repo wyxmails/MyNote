@@ -19,3 +19,8 @@
     you can execute the following command on any server:
     mysql --default-character-set=utf8 -uyour_username -pyour_password -hyour_ip database -e "show tables" > local_filename
     
+6， change column name of a exist table
+    alter table table_name change column col_name new_col_name int(11);
+    
+7, add one column into an exist table after column 'text'
+    alter table table_name add column new_col int(11) not null after text;
