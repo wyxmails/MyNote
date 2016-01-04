@@ -10,7 +10,7 @@
         field3   varchar(15) comment 'description of this field',
         field4   int(11),
         primary key (id)
-    );
+    )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 4, export data from database1 on your_ip1 server and import to database2 on ip2 server
     execute the following command on ip2 server:
     mysqldump --default-character-set=utf8 -uyour_username -pyour_password -hyour_ip1 database1 $tablename | mysql database2
