@@ -24,3 +24,7 @@
     
 7, add one column into an exist table after column 'text'
     alter table table_name add column new_col int(11) not null after text;
+8，look up the data length of a table:
+    select table_name,data_length,index_length 
+    from information_schema.tables where table_schema='database_name' and table_name like '%20151001';
+9, 
