@@ -1,0 +1,2 @@
+1, look up the usage of ports:
+  netstat -tunlp
