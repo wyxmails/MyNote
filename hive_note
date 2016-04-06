@@ -1,0 +1,11 @@
+1, use hive
+      hive
+      use source;
+2, write command to file, then execute the file, for example the file name is test.sql
+      hive -f test.sql >test.out 
+   //the result will be in test.out
+3, an example for hive
+    select floor(time/3600000),count(*) from table_name where one_column like '%710924%' 
+    and date='20160405' group by floor(time/3600000);
+    //floor(time/3600000) can change an unix time stamp with milleseconds to a string like hour
+    
