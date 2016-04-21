@@ -1,0 +1,12 @@
+Errors:
+
+[ERROR] /root/*/*/***.java:[1,1] illegal character: '\ufeff'
+[ERROR] /root/*/*/***.java:[1,10] class, interface, or enum expected
+
+
+solution:
+
+open the java file with vim
+then input the following command
+
+:set nobomb
